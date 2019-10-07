@@ -27,14 +27,20 @@
                     </thead>
                     <xsl:for-each select="//*[contains(@class, ' topic/topic ')]">
                         <xsl:variable name="topLevelTopic" select="(ancestor-or-self::*[contains(@class, ' topic/topic ')])[1]"/>
+                        <xsl:variable name="uniqueID" select="$topLevelTopic/@id"/>
+                        <xsl:variable name="topicref" select="(//*[contains(@class, ' map/topicref ')][@first_topic_id = concat('#', $uniqueID)])"/>
                         <tr>
-                            <td/>
                             <td>
+                                <!-- Group -->
+                                <xsl:value-of select="document($topicref/@xtrf)/*/*[contains(@class, ' topic/title ')]"/>
+                            </td>
+                            <td>
+                                <!-- Topic Title -->
                                 <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
                             </td>
                             <td>
-                                <xsl:variable name="uniqueID" select="$topLevelTopic/@id"/>
-                                <xsl:variable name="originalLocationOfCurrentTopic" select="(//*[contains(@class, ' map/topicref ')][@first_topic_id = concat('#', $uniqueID)])/@ohref"/>
+                                <!-- File Name -->
+                                <xsl:variable name="originalLocationOfCurrentTopic" select="$topicref/@ohref"/>
                                 <xsl:value-of select="$originalLocationOfCurrentTopic"/>
                             </td>
                             <td>
