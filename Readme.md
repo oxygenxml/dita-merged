@@ -3,7 +3,7 @@ It's transtype is called "merged".
 
 ## Possible applications:
 
-The folder "possible-applications" contains two stylesheets, one of them creates an HTML table presenting all topics referenced in the DITA Map and the other one creates a reltable by searching for all related links in the DITA topics. Other possible applications may include applying a spell checker or the entire contents, counting words or building various reports based on the XML output. You can also use the output XML with an XSLT stylesheet to produce some other kind of output format.
+The folder "possible-applications" contains two stylesheets, one of them creates an HTML table presenting all topics referenced in the DITA Map and the other one creates a reltable by searching for all related links in the DITA topics. Other possible applications may include applying a spell checker on the entire content, counting words or building various reports based on the XML output. You can also use the output XML with an XSLT stylesheet to produce other kinds of output format.
 
 
 Copyright and License
